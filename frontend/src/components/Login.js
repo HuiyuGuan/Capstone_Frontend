@@ -8,7 +8,7 @@ export default function Login(){
         <form className="login" 
             onSumbit={e=>{
                 e.preventDefault()
-                navigate("/hi")
+                navigate("/")
             }} >
             <h1>Sign-in</h1>
             <label> 
@@ -19,7 +19,7 @@ export default function Login(){
                 Password: <br></br>
                 <input type="password" />
             </label><br></br><br></br>
-            <input type = "submit" />
+            <input type = "submit" value="submit"/>
         </form>
     )
 }

@@ -13,9 +13,10 @@ function App() {
     <div className="App">
       <HashRouter>
         <Routes>
-          <Route path = "/" element={<Home />} />
-          <Route path = "/login" element={<Login />}/>
-          <Route path = "/signup" element={<Signup />} />
+          <Route exact path = "/" element={<Home />} >
+            <Route path = "/login" element={<Login />}/>
+            <Route path = "/signup" element={<Signup />} />
+          </Route>
         </Routes>
       </HashRouter>
     </div>
