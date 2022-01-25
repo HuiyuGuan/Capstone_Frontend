@@ -10,6 +10,15 @@
 .login-link{
   margin-left: 50px;
 }
+.userprofile-link{
+  margin: 10px;
+}
+.order-link{
+  margin: 10px;
+}
+.shoppingcart-link{
+  margin: 10px;
+}
 .trending{
   display: flex;
   align-items: center;
