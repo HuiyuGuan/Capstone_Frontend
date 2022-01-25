@@ -10,5 +10,21 @@
 .login-link{
   margin-left: 50px;
 }
-
+.trending{
+  display: flex;
+  align-items: center;
+}
+.random{
+  display: flex;
+  align-items: center;
+}
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: aqua;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 
