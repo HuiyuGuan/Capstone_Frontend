@@ -5,9 +5,9 @@ export default function Signup(){
 
     return(
         <form className="signup-form"
-            onSumbit={e=>{
+            onSubmit={e=>{
             e.preventDefault()
-            navigate("/home")
+            navigate("/")
         }} >
         <h1>Sign-up</h1>
         <label>

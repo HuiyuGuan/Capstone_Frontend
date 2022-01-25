@@ -1,12 +1,5 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import NavBar from "./NavBar"
-    
-export default function Home () {
+export default function Home(){
     return (
-        <div>
-            <NavBar />
-            <Outlet />  
-        </div>
-    );
+        <h1>This is the HomePage</h1>
+    )
 }
