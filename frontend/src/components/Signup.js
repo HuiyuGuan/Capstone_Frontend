@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function Signup(){
+export default function Signup(props){
     const navigate = useNavigate()
 
     const [firstname, setFirstname] = useState("")
@@ -69,7 +69,7 @@ export default function Signup(){
 
     function handlesubmit(event){
         event.preventDefault()
-        if(validate){
+        if(validate()){
             navigate("/")
         }
     }
@@ -107,12 +107,12 @@ export default function Signup(){
             </label><br></br><br></br>
             <input type = "submit" />
             <div className="form-error">
-                <small>{nameError}</small>
-                <small>{usernameError}</small>
-                <small>{emailError}</small>
-                <small>{countryError}</small>
-                <small>{passwordError}</small>
-                <small>{confirmPasswordError}</small>
+                <p>{nameError}</p>
+                <p>{usernameError}</p>
+                <p>{emailError}</p>
+                <p>{countryError}</p>
+                <p>{passwordError}</p>
+                <p>{confirmPasswordError}</p>
             </div>
         </form>
     )
