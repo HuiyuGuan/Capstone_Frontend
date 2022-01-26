@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../img/logo.jpg"
+// import logo from "../img/logo.jpg"
 
 export default function NavBar(){
     const [lookUp,setLookUp] = React.useState("")
@@ -14,7 +14,7 @@ export default function NavBar(){
 
     return(
         <nav className = "navbar">
-            <img src="https://media.istockphoto.com/vectors/shopping-cart-icon-design-cart-icon-symbol-design-vector-id1138644570?b=1&k=20&m=1138644570&s=170667a&w=0&h=uwXhyB-tFwJ64czfTBKAPNcPCxuAQ_pe823ApywiqcU=" className="nav-logo"/>
+        <img src="https://media.istockphoto.com/vectors/shopping-cart-icon-design-cart-icon-symbol-design-vector-id1138644570?b=1&k=20&m=1138644570&s=170667a&w=0&h=uwXhyB-tFwJ64czfTBKAPNcPCxuAQ_pe823ApywiqcU=" className="nav-logo"/>
             <Link to="/" className="HomePage"><h1 className="nav-title">Marketplace Simulation</h1></Link>
             <div className="nav-links">
                 {hasLogin && <span className="user-links">
