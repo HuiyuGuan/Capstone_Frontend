@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 
-export default function Login(){
+export default function Login(props){
     let navigate = useNavigate();
 
     const [username,setUsername] = useState("")
@@ -31,6 +31,7 @@ export default function Login(){
     function handlesubmit(event){
         event.preventDefault()
         if(validate()){
+            props.setlogin(true)
             navigate("/")
         }
     }

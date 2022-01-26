@@ -3,10 +3,10 @@ import { Outlet } from 'react-router-dom';
 import NavBar from "./NavBar"
 import Footer from "./Footer"
     
-export default function Layout () {
+export default function Layout (props) {
     return (
         <div>
-            <NavBar />
+            <NavBar loginStatus={props.loginStatus} setlogin={props.setlogin}/>
             <Footer />
             <Outlet />  
         </div>
