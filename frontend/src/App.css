@@ -1,11 +1,33 @@
+a{
+  text-decoration: none;
+}
+a:hover {
+  color: #F55415;
+}
 .navbar{
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: aqua;
+  background-color: rgb(42, 177, 255);  
+}
+.nav-links{
+  position: absolute;
+  right: 200px;
+  font-size: 20px;
+}
+.nav-search{
+  margin: 10px;
 }
 .nav-title{
   padding: 0 5px;
+}
+.nav-logo {
+  height: 100px;
+  width: 110px;
+  margin: 10px;
+  justify-content: left;
+  align-items: center;
+  border-radius: 100%;
 }
 .login-link{
   margin-left: 50px;
@@ -30,7 +52,7 @@
 .footer{
   margin-top: 1rem;
   padding: 1rem;
-  background-color: aqua;
+  background-color: rgb(42, 177, 255);
   position: fixed;
   bottom: 0;
   left: 0;
