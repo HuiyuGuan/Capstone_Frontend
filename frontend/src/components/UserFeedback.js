@@ -1,5 +1,6 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react"
+import { useNavigate } from "react-router-dom"
+import FeedbackCard from "./FeedbackCard"
 
 export default function UserFeedback(props){
     const hasLogin = props.loginStatus
@@ -7,7 +8,8 @@ export default function UserFeedback(props){
     return(
         <>
             {hasLogin && <div className="feedback">
-                <h1>This is the feedback page</h1>
+                <h1>Your Feedback</h1>
+                <FeedbackCard />
             </div>}
             {!hasLogin && navigate("/")}
         </>
