@@ -2,6 +2,7 @@ import './App.css';
 import React from "react"
 import { useState } from 'react';
 import { HashRouter,Route, Routes} from "react-router-dom"
+import axios from "axios"
 import Layout from "./components/Layout"
 import Login from "./components/Login"
 import Signup from "./components/Signup"
@@ -14,6 +15,7 @@ import Orders from "./components/Orders"
 import ShoppingCart from "./components/ShoppingCart"
 import ProductProfile from './components/ProductProfile';
 import Search from "./components/Search"
+import AddProduct from './components/AddProduct';
 
 
 function App() {
@@ -21,6 +23,10 @@ function App() {
 
   function setlogin(value){
     setHasLogin(value)
+  }
+
+  async function fetchuser(){
+    await axios.get("https://ttpsellit.herokuapp.com/users")
   }
 
   return (
@@ -32,6 +38,7 @@ function App() {
             <Route path = "/login" element={<Login loginStatus={hasLogin} setlogin={setlogin}/>}/>
             <Route path = "/signup" element={<Signup />} />
             <Route path = "/search" element={<Search />} />
+            <Route path = "/addproduct" element={<AddProduct />} />
             <Route path = "/user" element={<User loginStatus={hasLogin}/>} />
             <Route path = "/user/profile"element={<UserProfile loginStatus={hasLogin}/>} />
             <Route path = "/user/sale" element={<UserSale loginStatus={hasLogin}/>} />

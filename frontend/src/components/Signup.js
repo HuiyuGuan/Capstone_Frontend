@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Signup(props){
     const navigate = useNavigate()
 
     const [firstname, setFirstname] = useState("")
-    const [Lastname, setLastname] = useState("")
+    const [lastname, setlastname] = useState("")
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
     const [country, setCountry] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
@@ -17,12 +19,13 @@ export default function Signup(props){
     const [countryError, setCountryError] = useState("")
     const [passwordError, setPasswordError] = useState("")
     const [confirmPasswordError, setConfirmPasswordError] = useState("")
+    const [phoneError, setPhoneError] = useState("")
 
 
     function validate(){
         let isValidate = true
 
-        if(firstname==="" || Lastname===""){
+        if(firstname==="" || lastname===""){
             setNameError("Name CAN NOT be blank")
             isValidate = false
         }
@@ -64,14 +67,32 @@ export default function Signup(props){
         else
             setCountryError("")
 
-        return isValidate
+        if(phone.charAt(3) !== '-' || phone.charAt(7) !== '-' ){
+            setPhoneError("Invalid Phone number")
+            isValidate = false
+        }
+        else    
+            setPhoneError("")
+
+        return isValidate 
     }
 
-    function handlesubmit(event){
+    async function addUser(){
+        await axios.post("https://ttpsellit.herokuapp.com/users", {
+            username : username,
+            password : password,
+            name: `${firstname} ${lastname}`,
+            email : email,
+            country : country,
+            phone : phone
+        })
+    }
+
+    async function handlesubmit(event){
         event.preventDefault()
-        if(validate()){
+            await addUser()
             navigate("/")
-        }
+        
     }
 
     return(
@@ -79,11 +100,11 @@ export default function Signup(props){
             <h1>Sign-up</h1>
             <label>
                 Firstname: <br></br>
-                <input type="text" value ={firstname} onChane={ e => setFirstname(e.target.value)}/>
+                <input type="text" value ={firstname} onChange={ e => setFirstname(e.target.value)}/>
             </label><br></br>
             <label>
                 Lastname: <br></br>
-                <input type="text" value = {Lastname} onChange={ e => setLastname(e.target.value)}/>
+                <input type="text" value = {lastname} onChange={ e => setlastname(e.target.value)}/>
             </label><br></br>
             <label> 
                 Username: <br></br>
@@ -98,12 +119,16 @@ export default function Signup(props){
                 <input type="text" value = {country} onChange={ e => setCountry(e.target.value)}/>
             </label><br></br>
             <label>
+                Phone: <br></br>
+                <input type="text" value = {phone} onChange={ e => setPhone(e.target.value)}/>
+            </label><br></br>
+            <label>
                 Password: <br></br>
                 <input type="password" value = {password} onChange={ e => setPassword(e.target.value)}/>
             </label><br></br>
             <label>
                 Re-enter Password: <br></br>
-                <input type="pasword" value = {confirmPassword} onChange={ e => setConfirmPassword(e.target.value)}/>
+                <input type="password" value = {confirmPassword} onChange={ e => setConfirmPassword(e.target.value)}/>
             </label><br></br><br></br>
             <input type = "submit" />
             <div className="form-error">
@@ -111,6 +136,7 @@ export default function Signup(props){
                 <p>{usernameError}</p>
                 <p>{emailError}</p>
                 <p>{countryError}</p>
+                <p>{phoneError}</p>
                 <p>{passwordError}</p>
                 <p>{confirmPasswordError}</p>
             </div>
