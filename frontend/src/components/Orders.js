@@ -1,7 +1,17 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
+import OrderCard from "./OrderCard"
 
-export default function Orders(){
+export default function Orders(props){
+    const hasLogin = props.loginStatus
+    const navigate = useNavigate()
     return(
-        <h1>This is the orders page</h1>
+        <>
+            {hasLogin && <div className="Order">
+            <h1>Your Order</h1>
+            <OrderCard />
+            </div>}
+            {!hasLogin && navigate("/")}
+        </>
     )
 }

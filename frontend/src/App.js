@@ -6,7 +6,10 @@ import Layout from "./components/Layout"
 import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Home from "./components/Home"
+import User from "./components/User"
 import UserProfile from "./components/UserProfile"
+import UserSale from "./components/UserSale"
+import UserFeedback from "./components/UserFeedback"
 import Orders from "./components/Orders"
 import ShoppingCart from "./components/ShoppingCart"
 import ProductProfile from './components/ProductProfile';
@@ -29,9 +32,12 @@ function App() {
             <Route path = "/login" element={<Login loginStatus={hasLogin} setlogin={setlogin}/>}/>
             <Route path = "/signup" element={<Signup />} />
             <Route path = "/search" element={<Search />} />
-            <Route path = "/userprofile"element={<UserProfile />} />
-            <Route path = "/order"element={<Orders />} />
-            <Route path = "/shoppingcart"element={<ShoppingCart />} />
+            <Route path = "/user" element={<User loginStatus={hasLogin}/>} />
+            <Route path = "/user/profile"element={<UserProfile loginStatus={hasLogin}/>} />
+            <Route path = "/user/sale" element={<UserSale loginStatus={hasLogin}/>} />
+            <Route path = "/user/feedback" element={<UserFeedback loginStatus={hasLogin} />} />
+            <Route path = "/order"element={<Orders loginStatus={hasLogin}/>} />
+            <Route path = "/shoppingcart"element={<ShoppingCart loginStatus={hasLogin}/>} />
             <Route path = "/productprofile" element={<ProductProfile />} />
           </Route>
         </Routes>
