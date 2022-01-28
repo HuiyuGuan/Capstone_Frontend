@@ -2,8 +2,9 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import User from "./User";
 
-export default function AddProduct(){
+export default function AddProduct(props){
     const [name,setName] = useState("")
     const [img,setImg] = useState("")
     const [stock, setStock] = useState("")
@@ -18,7 +19,7 @@ export default function AddProduct(){
             price : price,
             stock : stock,
             image : img,
-            seller : "mike",
+            seller : props.user.username,
             description : description
         })
     }

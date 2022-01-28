@@ -3,15 +3,15 @@ import { useNavigate } from "react-router-dom"
 import ShoppingItem from "./ShoppingItem"
 
 export default function ShoppingCart(props){
-    const hasLogin = props.loginStatus
+    const user = props.user
     const navigate = useNavigate()
     return(
         <>
-            {hasLogin && <div className="shoppingcart">
+            {user.length !==0 && <div className="shoppingcart">
                 <h1>Shopping Cart </h1>
                 <ShoppingItem />
             </div>}
-            {!hasLogin && navigate("/")}
+            {user.length ===0 && navigate("/")}
         </>
     )
 }

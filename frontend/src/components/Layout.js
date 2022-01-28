@@ -6,8 +6,8 @@ import Footer from "./Footer"
 export default function Layout (props) {
     return (
         <div>
-            <NavBar username={props.username} setlogin={props.setlogin}/>
-            <Footer />
+            <NavBar user={props.user} setlogin={props.setlogin}/>
+            {/* <Footer /> */}
             <Outlet />  
         </div>
     );

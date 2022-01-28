@@ -21,37 +21,28 @@ import AddProduct from './components/AddProduct';
 function App() {
   const [user,setUser] = useState([])
 
-  function setlogin(array){
+  function setlogin(value){
+    setUser(value)
   }
 
-  async function fetchUser(){
-    const users = await axios.get("https://ttpsellit.herokuapp.com/users")
-    if(users)
-      setUser(users.data)
-  }
-
-  useEffect(() => {
-    fetchUser()
-    console.log(user)
-  }, [])
 
   return (
     <div className="App">
       <HashRouter>
         <Routes>
-          <Route exact path = "/" element={<Layout user={user} setlogin={setlogin}/>} >
+          <Route exact path = "/" element={<Layout user={user} setlogin={setlogin} />} >
             <Route index element={<Home />} />
-            <Route path = "/login" element={<Login user={user} setlogin={setlogin}/>}/>
+            <Route path = "/login" element={<Login user={user} setlogin={setlogin} />}/>
             <Route path = "/signup" element={<Signup />} />
             <Route path = "/search" element={<Search />} />
-            <Route path = "/addproduct" element={<AddProduct />} />
-            <Route path = "/user" element={<User username={user.username}/>} />
-            <Route path = "/user/profile"element={<UserProfile username={user.username}/>} />
-            <Route path = "/user/sale" element={<UserSale username={user.username}/>} />
-            <Route path = "/user/feedback" element={<UserFeedback username={user.username} />} />
-            <Route path = "/order"element={<Orders username={user.username}/>} />
-            <Route path = "/shoppingcart"element={<ShoppingCart username={user.username}/>} />
-            <Route path = "/productprofile" element={<ProductProfile />} />
+            <Route path = "/addproduct" element={<AddProduct user={user}/>} />
+            <Route path = "/user" element={<User user={user}/>} />
+            <Route path = "/user/profile"element={<UserProfile user={user}/>} />
+            <Route path = "/user/sale" element={<UserSale user={user}/>} />
+            <Route path = "/user/feedback" element={<UserFeedback user={user} />} />
+            <Route path = "/order"element={<Orders user={user}/>} />
+            <Route path = "/shoppingcart"element={<ShoppingCart user={user}/>} />
+            <Route path = "/:product/profile" element={<ProductProfile />} />
           </Route>
         </Routes>
         </HashRouter>

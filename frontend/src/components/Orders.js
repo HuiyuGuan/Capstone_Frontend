@@ -3,15 +3,15 @@ import { useNavigate } from "react-router-dom"
 import OrderCard from "./OrderCard"
 
 export default function Orders(props){
-    const hasLogin = props.loginStatus
+    const user = props.user
     const navigate = useNavigate()
     return(
         <>
-            {hasLogin && <div className="Order">
+            {user.length !==0 && <div className="Order">
             <h1>Your Order</h1>
             <OrderCard />
             </div>}
-            {!hasLogin && navigate("/")}
+            {user.length ===0 && navigate("/")}
         </>
     )
 }
