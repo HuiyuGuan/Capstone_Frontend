@@ -90,9 +90,10 @@ export default function Signup(props){
 
     async function handlesubmit(event){
         event.preventDefault()
+        if(validate()){
             await addUser()
             navigate("/")
-        
+        }
     }
 
     return(

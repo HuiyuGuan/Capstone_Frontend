@@ -18,7 +18,7 @@ export default function Search(props){
         }
     }
 
-    const result = items.map(item => <ProductCard key={item.id} item={item}/>)
+    const result = items.map(item => <ProductCard key={item.item_id} item={item}/>)
 
     return(
         <div className="search">

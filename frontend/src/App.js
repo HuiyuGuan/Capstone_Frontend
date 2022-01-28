@@ -42,7 +42,7 @@ function App() {
             <Route path = "/user/feedback" element={<UserFeedback user={user} />} />
             <Route path = "/order"element={<Orders user={user}/>} />
             <Route path = "/shoppingcart"element={<ShoppingCart user={user}/>} />
-            <Route path = "/productprofile" element={<ProductProfile />} />
+            <Route path = "/:product/profile" element={<ProductProfile />} />
           </Route>
         </Routes>
         </HashRouter>
