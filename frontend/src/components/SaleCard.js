@@ -11,7 +11,7 @@ export default function SaleCard(props){
             <Link to={`/${item.name}/profile`} state={{item:item}}><h3>{item.name}</h3></Link>
             <h4>Stock:{item.stock}</h4>
             <h3>price: ${item.price.toFixed(2)}</h3>
-            <button onClick={async()=> await props.delete(item.item_id)}>Delete</button>
+            <button onClick={async()=> await props.delete(item.item_id)} class="button-70" role="button">Delete</button>
         </div>
     )
 }

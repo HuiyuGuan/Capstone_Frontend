@@ -210,3 +210,19 @@ a:hover {
   border: 2px bold;
 
 }
+.productcard{
+  width: 500px;
+  height: 500px;
+}
+.searchTitle{
+  text-align: center;
+  border: 2px bold;
+}
+.salecard{
+  width: 500px;
+  height: 500px;
+}
+.productprofile{
+  text-align: center;
+  margin: auto;
+}
