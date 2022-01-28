@@ -66,3 +66,81 @@ a:hover {
 .productcard{
   text-align: center;
 }
+a{
+  text-decoration: none;
+}
+a:hover {
+  color: #F55415;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(42, 177, 255);  
+}
+.nav-links{
+  position: absolute;
+  right: 200px;
+  font-size: 20px;
+}
+.nav-search{
+  margin: 10px;
+}
+.nav-title{
+  margin: 0 5px;
+}
+.nav-logo {
+  height: 100px;
+  width: 110px;
+  margin: 10px;
+  justify-content: left;
+  align-items: center;
+  border-radius: 100%;
+}
+.login-link{
+  margin-left: 50px;
+}
+.userprofile-link{
+  margin: 10px;
+}
+.order-link{
+  margin: 10px;
+}
+.shoppingcart-link{
+  margin: 10px;
+}
+.trending{
+  display: flex;
+  align-items: center;
+}
+.random{
+  display: flex;
+  align-items: center;
+}
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgb(42, 177, 255);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.productcard{
+  text-align: center;
+}
+.footer{
+  text-align: center;
+}
+.trending{
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.random{
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.UserProfile{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 300px;
+  padding-left: 150px;
+  margin-left: 10px;
+}
