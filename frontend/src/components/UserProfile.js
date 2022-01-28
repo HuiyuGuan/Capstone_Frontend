@@ -7,10 +7,13 @@ export default function UserProfile(props){
     return(
         <>
             {user.length !==0 && <div className="UserProfile">
-                <h3>{user.name}</h3>
-                <h3>{user.email}</h3>
-                <h3>{user.phone}</h3>
-                <h3>{user.country}</h3>
+                <div className="card">
+                    <h3 className="profile">Profile</h3>
+                <h3>username: {user.name}</h3>
+                <h3>email: {user.email}</h3>
+                <h3>phone: {user.phone}</h3>
+                <h3>country: {user.country}</h3>
+                </div>
             </div>}
             {user.length ===0 && navigate("/")}
         </>

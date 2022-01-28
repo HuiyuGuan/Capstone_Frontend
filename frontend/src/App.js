@@ -1,8 +1,9 @@
 import './App.css';
 import React from "react"
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
+//import { useEffect} from 'react';
 import { HashRouter,Route, Routes} from "react-router-dom"
-import axios from "axios"
+//import axios from "axios"
 import Layout from "./components/Layout"
 import Login from "./components/Login"
 import Signup from "./components/Signup"
