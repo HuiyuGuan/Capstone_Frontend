@@ -59,8 +59,8 @@ export default function ProductProfile(props) {
                     buy()
                     navigate("/order")
                 }
-            }}>Buy</button>
-            <button>Add to Cart</button>
+            }} class="button-70" role="button">Buy</button>
+            <button class="button-70" role="button">Add to Cart</button>
             <p>{qtyError}</p>
             </>}
 
