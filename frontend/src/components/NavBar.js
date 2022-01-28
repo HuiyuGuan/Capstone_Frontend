@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function NavBar(props){
     const [lookUp,setLookUp] = React.useState("")
 
-    const hasLogin = props.loginStatus
+    const user = props.user
 
     function SearchItem(event){
         console.log(lookUp)
@@ -21,15 +21,15 @@ export default function NavBar(props){
             </Link>
             <Link to="/" className="HomePage"><h1 className="nav-title">TTP SMARKET</h1></Link>
             <div className="nav-links">
-                {hasLogin && <span className="user-links">
+                {user.length !==0 && <span className="user-links">
                 <Link to ="/user" className="user-link">user</Link>
                 <Link to ="/order" className="order-link">order</Link>
                 <Link to ="/shoppingcart" className="shoppingcart-link">cart</Link>
-                <button onClick={()=>props.setlogin(false)}>Log out</button>
+                <button onClick={()=>props.setlogin("")}>Log out</button>
                 </span>}
                 <input className="nav-search" type="text" placeholder="search item" value ={lookUp}onChange={SearchItem}></input>
                 <Link to="/search" className="search-link" state={{item:lookUp}}>Search</Link>
-                {!hasLogin && <Link to ="/login" className="login-link">login</Link> }
+                {user.length ===0 && <Link to ="/login" className="login-link">login</Link> }
             </div>
         </nav>
     )

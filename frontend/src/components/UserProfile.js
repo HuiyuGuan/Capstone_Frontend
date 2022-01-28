@@ -2,17 +2,17 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function UserProfile(props){
-    const hasLogin = props.loginStatus
+    const user = props.user
     const navigate = useNavigate()
     return(
         <>
-            {hasLogin && <div className="UserProfile">
-                <h3>name</h3>
-                <h3>email</h3>
-                <h3>phone</h3>
-                <h3>country</h3>
+            {user.length !==0 && <div className="UserProfile">
+                <h3>{user.name}</h3>
+                <h3>{user.email}</h3>
+                <h3>{user.phone}</h3>
+                <h3>{user.country}</h3>
             </div>}
-            {!hasLogin && navigate("/")}
+            {user.length ===0 && navigate("/")}
         </>
     )
 }

@@ -3,16 +3,16 @@ import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 
 export default function User(props){
-    const hasLogin = props.loginStatus
+    const user = props.user
     const navigate = useNavigate()
     return(
         <>
-            {hasLogin && <div className="user">
+            {user.length !==0 && <div className="user">
                 <Link to="/user/profile"><button>Profile</button></Link><br></br>
                 <Link to="/user/sale"><button>Sale List</button></Link><br></br>
                 <Link to="/user/feedback"><button>Feedback List</button></Link><br></br>
             </div>}
-            {!hasLogin && navigate("/")}
+            {user.length ===0 && navigate("/")}
         </>
     )
 }
