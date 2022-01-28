@@ -24,14 +24,14 @@ export default function NavBar(props){
 
                 {user.length !==0 && <span className="user-links">
 
-                <Link to ="/user" className="user-link">user</Link>
-                <Link to ="/order" className="order-link">order</Link>
-                <Link to ="/shoppingcart" className="shoppingcart-link">cart</Link>
-                <button onClick={()=>props.setlogin("")}>Log out</button>
+                <Link to ="/user" className="user-link"><button class="button-70" role="button">user</button></Link>
+                <Link to ="/order" className="order-link"><button class="button-70" role="button">order</button></Link>
+                <Link to ="/shoppingcart" className="shoppingcart-link"><button class="button-70" role="button">cart</button></Link>
+                <button onClick={()=>props.setlogin("")} class="button-70" role="button">Log out</button>
                 </span>}
-                <input className="nav-search" type="text" placeholder="search item" value ={lookUp}onChange={SearchItem}></input>
-                <Link to="/search" className="search-link" state={{item:lookUp}}>Search</Link>
-                {user.length ===0 && <Link to ="/login" className="login-link">login</Link> }
+                <input className="nav-search" type="text" placeholder="search item" value ={lookUp}onChange={SearchItem} ></input>
+                <Link to="/search" className="search-link" state={{item:lookUp}}><button class="button-70" role="button">Search</button></Link>
+                {user.length ===0 && <Link to ="/login" className="login-link"><button class="button-70" role="button">login</button></Link> }
 
             </div>
         </nav>
