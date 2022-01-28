@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Capstone_Frontend/static/css/main.5d16c3c7.css",
-    "main.js": "/Capstone_Frontend/static/js/main.9b27018e.js",
+    "main.css": "/Capstone_Frontend/static/css/main.f73b9dfc.css",
+    "main.js": "/Capstone_Frontend/static/js/main.c1bc9b5a.js",
     "static/js/787.cda612ba.chunk.js": "/Capstone_Frontend/static/js/787.cda612ba.chunk.js",
     "index.html": "/Capstone_Frontend/index.html",
-    "main.5d16c3c7.css.map": "/Capstone_Frontend/static/css/main.5d16c3c7.css.map",
-    "main.9b27018e.js.map": "/Capstone_Frontend/static/js/main.9b27018e.js.map",
+    "main.f73b9dfc.css.map": "/Capstone_Frontend/static/css/main.f73b9dfc.css.map",
+    "main.c1bc9b5a.js.map": "/Capstone_Frontend/static/js/main.c1bc9b5a.js.map",
     "787.cda612ba.chunk.js.map": "/Capstone_Frontend/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d16c3c7.css",
-    "static/js/main.9b27018e.js"
+    "static/css/main.f73b9dfc.css",
+    "static/js/main.c1bc9b5a.js"
   ]
 }
