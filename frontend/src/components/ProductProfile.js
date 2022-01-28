@@ -54,7 +54,7 @@ export default function ProductProfile(props){
             <h3>{item.description}</h3>
             {user.username !== item.seller && 
             <><button onClick={()=>{
-                <label>Qty:<input type="number" value={qty} width="2" onChange={e=>setQty(e.target.value)}/></label>
+                <label>Qty:<input type="number" value={qty} onChange={e=>setQty(e.target.value)} /></label>
                 if(validate()){
                     buy()
                     navigate("/order")
