@@ -129,6 +129,10 @@ a:hover {
 .productcard{
   text-align: center;
 }
+.sale-heading{
+  display: flex;
+  align-items: center;
+}
 .footer{
   text-align: center;
 }
@@ -144,3 +148,4 @@ a:hover {
   padding-left: 150px;
   margin-left: 10px;
 }
+

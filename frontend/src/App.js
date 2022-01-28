@@ -36,14 +36,14 @@ function App() {
             <Route path = "/login" element={<Login user={user} setlogin={setlogin} />}/>
             <Route path = "/signup" element={<Signup />} />
             <Route path = "/search" element={<Search />} />
-            <Route path = "/addproduct" element={<AddProduct user={user}/>} />
+            <Route path = "/user/sale/add" element={<AddProduct user={user}/>} />
             <Route path = "/user" element={<User user={user}/>} />
             <Route path = "/user/profile"element={<UserProfile user={user}/>} />
             <Route path = "/user/sale" element={<UserSale user={user}/>} />
             <Route path = "/user/feedback" element={<UserFeedback user={user} />} />
             <Route path = "/order"element={<Orders user={user}/>} />
             <Route path = "/shoppingcart"element={<ShoppingCart user={user}/>} />
-            <Route path = "/:product/profile" element={<ProductProfile />} />
+            <Route path = "/:product/profile" element={<ProductProfile user={user}/>} />
           </Route>
         </Routes>
         </HashRouter>
