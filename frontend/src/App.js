@@ -32,7 +32,7 @@ function App() {
       <HashRouter>
         <Routes>
           <Route exact path = "/" element={<Layout user={user} setlogin={setlogin} />} >
-            <Route index element={<Home />} />
+            <Route index element={<Login />} />
             <Route path = "/login" element={<Login user={user} setlogin={setlogin} />}/>
             <Route path = "/signup" element={<Signup />} />
             <Route path = "/search" element={<Search />} />
