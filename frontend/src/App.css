@@ -61,3 +61,7 @@ a:hover {
 .productcard{
   text-align: center;
 }
+.sale-heading{
+  display: flex;
+  align-items: center;
+}

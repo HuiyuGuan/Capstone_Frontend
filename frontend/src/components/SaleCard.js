@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function SaleCard(){
+export default function SaleCard(props){
+    const item = props.item
     return(
         <div className="salecard">
-            <h2>img url</h2>
-            <h3>product name</h3>
-            <h4>in stock:</h4>
-            <h3>price</h3>
+            <img src={item.image} alt={item.name} width="350px"/>
+            <Link to={`/${item.name}/profile`} state={{item:item}}><h3>{item.name}</h3></Link>
+            <h4>Stock:{item.stock}</h4>
+            <h3>price: ${item.price.toFixed(2)}</h3>
         </div>
     )
 }
