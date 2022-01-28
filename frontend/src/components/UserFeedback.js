@@ -1,15 +1,15 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import OrderCard from "./OrderCard"
+import FeedbackCard from "./FeedbackCard"
 
-export default function Orders(props){
+export default function UserFeedback(props){
     const user = props.user
     const navigate = useNavigate()
     return(
         <>
-            {user.length !==0 && <div className="Order">
-            <h1>Your Order</h1>
-            <OrderCard />
+            {user.length !==0 && <div className="feedback">
+                <h1>Your Feedback</h1>
+                <FeedbackCard />
             </div>}
             {user.length ===0 && navigate("/")}
         </>

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Login(props){
     let navigate = useNavigate();
@@ -8,17 +9,29 @@ export default function Login(props){
     const [password,setPassword] = useState("")
     const [usernameError,setUsernameError] = useState("")
     const [passwordError, setPasswordError] = useState("")
+    const [user,setUser] = useState([])
+
+    async function fetchUser(username){
+        const users = await axios.get("https://ttpsellit.herokuapp.com/users/"+username)
+        if(users){
+            setUser(users.data)
+        }
+    }
+
+    useEffect(()=>{
+        fetchUser(username)
+    },[username])
 
     function validate(){
         let isValidate = true
-        if(username !=="mike"){
+        if(username !== user.username){
             setUsernameError("Incorrect username")
             isValidate = false
         }
         else    
             setUsernameError("")
 
-        if(password !== "123"){
+        if(password !== user.password){
             setPasswordError("Incorrect password")
             isValidate = false
         }
@@ -28,10 +41,11 @@ export default function Login(props){
         return isValidate
     }
 
-    function handlesubmit(event){
+    async function handlesubmit(event){
         event.preventDefault()
+        console.log(user)
         if(validate()){
-            props.setlogin(true)
+            props.setlogin(user)
             navigate("/")
         }
     }
