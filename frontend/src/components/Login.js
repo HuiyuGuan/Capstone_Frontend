@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function Login(props){
     let navigate = useNavigate();
+    let user = props.user
 
     const [username,setUsername] = useState("")
     const [password,setPassword] = useState("")
@@ -11,14 +12,14 @@ export default function Login(props){
 
     function validate(){
         let isValidate = true
-        if(username !=="mike"){
+        if(username !== user[4].username){
             setUsernameError("Incorrect username")
             isValidate = false
         }
         else    
             setUsernameError("")
 
-        if(password !== "123"){
+        if(password !== user[4].password){
             setPasswordError("Incorrect password")
             isValidate = false
         }

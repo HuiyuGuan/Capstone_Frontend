@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function NavBar(props){
     const [lookUp,setLookUp] = React.useState("")
 
-    let hasLogin = props.loginStatus
+    const hasLogin = props.loginStatus
 
     function SearchItem(event){
         console.log(lookUp)
@@ -19,14 +19,14 @@ export default function NavBar(props){
                 -design-vector-id1138644570?b=1&k=20&m=1138644570&s=170667a&w=0&h=uwXhyB-tFwJ64czfTBKAPNcPCxuAQ_pe823ApywiqcU=" 
                 className="nav-logo" alt="logo"/>
             </Link>
-            <Link to="/" className="HomePage"><h1 className="nav-title">TTPS Market</h1></Link>
+            <Link to="/" className="HomePage"><h1 className="nav-title">TTP SMARKET</h1></Link>
             <div className="nav-links">
                 <input className="nav-search" type="text" placeholder="search item" value ={lookUp}onChange={SearchItem}></input>
                 <Link to="/search" className="search-link" state={{item:lookUp}}>
                     <img className="search-button" src="https://static.thenounproject.com/png/424965-200.png"></img>
                 </Link>
                 {hasLogin && <span className="user-links">
-                <Link to ="/userprofile" className="userprofile-link">user</Link>
+                <Link to ="/user" className="user-link">user</Link>
                 <Link to ="/order" className="order-link">order</Link>
                 <Link to ="/shoppingcart" className="shoppingcart-link">cart</Link>
                 <button onClick={()=>props.setlogin(false)}>Log out</button>
