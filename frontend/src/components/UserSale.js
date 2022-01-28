@@ -32,7 +32,7 @@ export default function UserSale(props){
             {user.length !==0 && <div className="sale">
                 <div className="sale-heading">
                     <h1>Your Sale</h1>
-                    <Link to="/user/sale/add"><button>Add Sale</button></Link>
+                    <Link to="/user/sale/add"><button class="button-70" role="button">Add Sale</button></Link>
                 </div>
                 {result}
             </div>}

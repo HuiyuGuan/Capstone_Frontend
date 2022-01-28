@@ -2,49 +2,49 @@ import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Login(props){
+export default function Login(props) {
     let navigate = useNavigate();
 
-    const [username,setUsername] = useState("")
-    const [password,setPassword] = useState("")
-    const [usernameError,setUsernameError] = useState("")
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [usernameError, setUsernameError] = useState("")
     const [passwordError, setPasswordError] = useState("")
-    const [user,setUser] = useState([])
+    const [user, setUser] = useState([])
 
-    async function fetchUser(username){
-        const users = await axios.get("https://ttpsellit.herokuapp.com/users/"+username)
-        if(users){
+    async function fetchUser(username) {
+        const users = await axios.get("https://ttpsellit.herokuapp.com/users/" + username)
+        if (users) {
             setUser(users.data)
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchUser(username)
-    },[username])
+    }, [username])
 
-    function validate(){
+    function validate() {
         let isValidate = true
-        if(username !== user.username){
+        if (username !== user.username) {
             setUsernameError("Incorrect username")
             isValidate = false
         }
-        else    
+        else
             setUsernameError("")
 
-        if(password !== user.password){
+        if (password !== user.password) {
             setPasswordError("Incorrect password")
             isValidate = false
         }
-        else   
+        else
             setPasswordError("")
 
         return isValidate
     }
 
-    async function handlesubmit(event){
+    async function handlesubmit(event) {
         event.preventDefault()
         console.log(user)
-        if(validate()){
+        if (validate()) {
             props.setlogin(user)
             navigate("/")
         }
@@ -54,21 +54,21 @@ export default function Login(props){
         <div>
             <form className="login" onSubmit={handlesubmit}>
                 <h1>Sign-in</h1>
-                <label> 
+                <label>
                     Username: <br></br>
-                    <input type="text" value={username} onChange={ e => setUsername(e.target.value)}/>
+                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
                 </label><br></br>
                 <label>
                     Password: <br></br>
-                    <input type="password" value={password} onChange={ e => setPassword(e.target.value)}/>
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </label><br></br><br></br>
-                <input type = "submit" value="submit"/>
+                <button class="button-70" role="button" type="submit" value="submit">submit</button>
+                <button onClick={() => navigate("/signup")} class="button-70" role="button">sign up</button>
+                <div className="validation">
+                    <p>{usernameError}</p>
+                    <p>{passwordError}</p>
+                </div>
             </form>
-            <button onClick={()=>navigate("/signup")}>sign up</button>
-            <div className="validation">
-                <p>{usernameError}</p>
-                <p>{passwordError}</p>
-            </div>
         </div>
     )
 }

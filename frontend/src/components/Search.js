@@ -22,7 +22,7 @@ export default function Search(props){
 
     return(
         <div className="search">
-            <h2>Currently searching {location.state.item}</h2>
+            <h2 className="searchTitle">Currently searching: {location.state.item}</h2>
             {result}
         </div>
     )
