@@ -51,18 +51,19 @@ export default function ProductProfile(props) {
             <h4>Price: ${item.price.toFixed(2)}</h4>
             <h4>Stock: {item.stock}</h4>
             <h4>seller: {item.seller}</h4>
-            <h3>description: {item.description}</h3>
-            {user.username !== item.seller &&
-                <><button onClick={() => {
-                    <label>Qty:<input type="number" value={qty} width="2" onChange={e => setQty(e.target.value)} /></label>
-                    if (validate()) {
-                        buy()
-                        navigate("/order")
-                    }
-                }}>Buy</button>
-                    <button>Add to Cart</button>
-                    <p>{qtyError}</p>
-                </>}
+            <h3>{item.description}</h3>
+            {user.username !== item.seller && 
+            <><button onClick={()=>{
+                <label>Qty:<input type="number" value={qty} onChange={e=>setQty(e.target.value)} /></label>
+                if(validate()){
+                    buy()
+                    navigate("/order")
+                }
+            }}>Buy</button>
+            <button>Add to Cart</button>
+            <p>{qtyError}</p>
+            </>}
+
         </div>
     )
 }
