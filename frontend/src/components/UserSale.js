@@ -9,6 +9,11 @@ export default function UserSale(props){
     const user = props.user
     const navigate = useNavigate()
 
+    async function deleteSale(id){
+        await axios.delete("https://ttpsellit.herokuapp.com/items/"+id)
+        fetchSale()
+    }
+
     async function fetchSale(){
         const sale = await axios.get("https://ttpsellit.herokuapp.com/items")
         if(sale){
@@ -20,14 +25,14 @@ export default function UserSale(props){
         fetchSale()
     },[])
 
-    const result = sale.map( item => <SaleCard key={item.item_id} item={item}/>)
+    const result = sale.map( item => <SaleCard key={item.item_id} item={item} delete={deleteSale}/>)
 
     return(
         <>
             {user.length !==0 && <div className="sale">
                 <div className="sale-heading">
                     <h1>Your Sale</h1>
-                    <Link to="/addproduct"><button>Add Sale</button></Link>
+                    <Link to="/user/sale/add"><button>Add Sale</button></Link>
                 </div>
                 {result}
             </div>}

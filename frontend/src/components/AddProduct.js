@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -51,12 +51,12 @@ export default function AddProduct(props){
     
     async function addItem(){
         await axios.post("https://ttpsellit.herokuapp.com/items", {
-            name : "name",
-            price : 5,
-            stock : 5,
-            image : "",
-            seller : "mike",
-            description : "description"
+            name : name,
+            price : price,
+            stock : stock,
+            image : img,
+            seller : props.user.username,
+            description : description
         })
     }
 
