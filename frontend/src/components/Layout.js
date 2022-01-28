@@ -7,7 +7,7 @@ export default function Layout (props) {
     return (
         <div>
             <NavBar user={props.user} setlogin={props.setlogin}/>
-            <Footer />
+            {/* <Footer /> */}
             <Outlet />  
         </div>
     );
