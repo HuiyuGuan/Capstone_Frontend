@@ -2,6 +2,7 @@ import axios from "axios"
 import React, { useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 
+
 export default function ProductProfile(props) {
     const location = useLocation()
     const navigate = useNavigate()
@@ -45,6 +46,7 @@ export default function ProductProfile(props) {
     }
 
     return (
+
         <div className="productprofile">
             <h3>{item.name}</h3>
             <img src={item.image} alt={item.name} width="500px" />
@@ -63,7 +65,6 @@ export default function ProductProfile(props) {
             <button>Add to Cart</button>
             <p>{qtyError}</p>
             </>}
-
         </div>
     )
 }
