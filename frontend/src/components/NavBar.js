@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import logo from "../img/logo.jpg"
+//import searchButton from "../img/searchButton.js"
 
 export default function NavBar(props){
     const [lookUp,setLookUp] = React.useState("")
@@ -21,7 +21,9 @@ export default function NavBar(props){
             </Link>
             <Link to="/" className="HomePage"><h1 className="nav-title">TTP SMARKET</h1></Link>
             <div className="nav-links">
+
                 {user.length !==0 && <span className="user-links">
+
                 <Link to ="/user" className="user-link">user</Link>
                 <Link to ="/order" className="order-link">order</Link>
                 <Link to ="/shoppingcart" className="shoppingcart-link">cart</Link>
@@ -30,6 +32,7 @@ export default function NavBar(props){
                 <input className="nav-search" type="text" placeholder="search item" value ={lookUp}onChange={SearchItem}></input>
                 <Link to="/search" className="search-link" state={{item:lookUp}}>Search</Link>
                 {user.length ===0 && <Link to ="/login" className="login-link">login</Link> }
+
             </div>
         </nav>
     )
