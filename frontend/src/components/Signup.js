@@ -131,7 +131,7 @@ export default function Signup(props){
                 Re-enter Password: <br></br>
                 <input type="password" value = {confirmPassword} onChange={ e => setConfirmPassword(e.target.value)}/>
             </label><br></br><br></br>
-            <input type = "submit" />
+            <button class="button-70" role="button" type="submit" value="submit">submit</button>
             <div className="form-error">
                 <p>{nameError}</p>
                 <p>{usernameError}</p>
