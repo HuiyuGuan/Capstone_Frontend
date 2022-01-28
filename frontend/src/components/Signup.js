@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import axios from "axios";
 
 export default function Signup(props){
@@ -21,6 +21,7 @@ export default function Signup(props){
     const [confirmPasswordError, setConfirmPasswordError] = useState("")
     const [phoneError, setPhoneError] = useState("")
 
+    const [user,setUser] = useState([])
 
     function validate(){
         let isValidate = true
@@ -34,6 +35,10 @@ export default function Signup(props){
 
         if(username===""){
             setUsernameError("Username CAN NOT be blank")
+            isValidate = false
+        }
+        else if(username === user.username){
+            setUsernameError("Username is already taken")
             isValidate = false
         }
         else
@@ -87,6 +92,16 @@ export default function Signup(props){
             phone : phone
         })
     }
+    async function fetchUser(username){
+        const users = await axios.get("https://ttpsellit.herokuapp.com/users/"+username)
+        if(users){
+            setUser(users.data)
+        }
+    }
+
+    useEffect(()=>{
+        fetchUser(username)
+    },[username])
 
     async function handlesubmit(event){
         event.preventDefault()
