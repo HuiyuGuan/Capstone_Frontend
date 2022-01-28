@@ -49,6 +49,7 @@ a:hover {
 .random{
   display: flex;
   align-items: center;
+  overflow-x: auto;
 }
 .footer{
   margin-top: 1rem;
