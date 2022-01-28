@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/HuiyuGuan/Capstone_Backend/static/css/main.1000b264.css",
-    "main.js": "/HuiyuGuan/Capstone_Backend/static/js/main.2bdc3efd.js",
-    "static/js/787.cda612ba.chunk.js": "/HuiyuGuan/Capstone_Backend/static/js/787.cda612ba.chunk.js",
-    "index.html": "/HuiyuGuan/Capstone_Backend/index.html",
-    "main.1000b264.css.map": "/HuiyuGuan/Capstone_Backend/static/css/main.1000b264.css.map",
-    "main.2bdc3efd.js.map": "/HuiyuGuan/Capstone_Backend/static/js/main.2bdc3efd.js.map",
-    "787.cda612ba.chunk.js.map": "/HuiyuGuan/Capstone_Backend/static/js/787.cda612ba.chunk.js.map"
+    "main.css": "/Capstone_Frontend/static/css/main.ca765a43.css",
+    "main.js": "/Capstone_Frontend/static/js/main.e5a3f9a3.js",
+    "static/js/787.cda612ba.chunk.js": "/Capstone_Frontend/static/js/787.cda612ba.chunk.js",
+    "index.html": "/Capstone_Frontend/index.html",
+    "main.ca765a43.css.map": "/Capstone_Frontend/static/css/main.ca765a43.css.map",
+    "main.e5a3f9a3.js.map": "/Capstone_Frontend/static/js/main.e5a3f9a3.js.map",
+    "787.cda612ba.chunk.js.map": "/Capstone_Frontend/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1000b264.css",
-    "static/js/main.2bdc3efd.js"
+    "static/css/main.ca765a43.css",
+    "static/js/main.e5a3f9a3.js"
   ]
 }
